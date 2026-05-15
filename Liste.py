@@ -16,7 +16,7 @@ def home():
     <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>Anime Liste</title>
+        <title>Serien Liste</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
@@ -337,12 +337,12 @@ def home():
         </style>
     </head>
     <body>
-        <h1>Anime Liste</h1>
+        <h1>Serien Liste</h1>
         <div id="headerContainer">
             <div id="quickStats">
                 <div class="stat">
                     <span class="stat-value" id="totalAnime">0</span>
-                    <div class="stat-label">Gesamt Anime</div>
+                    <div class="stat-label">Gesamt Serien</div>
                 </div>
                 <div class="stat">
                     <span class="stat-value" id="fiveStarPercent">0%</span>
@@ -361,7 +361,7 @@ def home():
             </div>
         </div>
         <div id="searchContainer">
-            <input type="text" id="searchInput" placeholder="Suche nach Anime-Name..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0, 212, 255, 0.3); background: rgba(22, 33, 62, 0.6); color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 1em; outline: none; transition: all 0.3s ease;">
+            <input type="text" id="searchInput" placeholder="Suche nach Serien Namen..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0, 212, 255, 0.3); background: rgba(22, 33, 62, 0.6); color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 1em; outline: none; transition: all 0.3s ease;">
         </div>
         <div id="listeContainer">
             <!-- Abschnitte werden hier dynamisch eingefügt -->
@@ -400,11 +400,11 @@ def home():
                 if (data.length === 0) {
                     // Beispiel-Daten hinzufügen
                     data = [
-                        {"bewertung": "5.0", "name": "Attack on Titan", "info": "Epischer Anime über Titanen", "rewatch": 1},
+                        {"bewertung": "5.0", "name": "Attack on Titan", "info": "Epische Serie über Titanen", "rewatch": 1},
                         {"bewertung": "4.5", "name": "Death Note", "info": "Psychologischer Thriller", "rewatch": 1},
                         {"bewertung": "4.0", "name": "One Piece", "info": "Abenteuer auf hoher See", "rewatch": 1},
                         {"bewertung": "3.5", "name": "Naruto", "info": "Ninja-Abenteuer", "rewatch": 1},
-                        {"bewertung": "2.0", "name": "Beispiel schlechter Anime", "info": "Nur ein Beispiel", "rewatch": 1}
+                        {"bewertung": "2.0", "name": "Beispiel schlechter Serie", "info": "Nur ein Beispiel", "rewatch": 1}
                     ];
                     localStorage.setItem('listeData', JSON.stringify(data));
                 }
@@ -533,7 +533,7 @@ def home():
                         const section = document.createElement('div');
                         section.className = 'section';
                         const h2 = document.createElement('h2');
-                        h2.textContent = `${i} Sterne Anime`;
+                        h2.textContent = `${i} Sterne Serien`;
                         h2.style.color = '#00d4ff';
                         section.appendChild(h2);
 
@@ -677,7 +677,7 @@ def home():
                     setTimeout(() => {
                         const sections = container.querySelectorAll('.section');
                         sections.forEach(section => {
-                            if (section.querySelector('h2').textContent === `${group} Sterne Anime`) {
+                            if (section.querySelector('h2').textContent === `${group} Sterne Serien`) {
                                 const rows = section.querySelectorAll('tr');
                                 // Find the row with the matching name
                                 for (let i = 1; i < rows.length - 1; i++) { // Skip header and last empty
@@ -809,7 +809,7 @@ def home():
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'anime-liste-backup.json';
+                a.download = 'serien-liste-backup.json';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -859,7 +859,7 @@ def home():
                     const sections = container.querySelectorAll('.section');
                     let found = false;
                     for (const section of sections) {
-                        if (section.querySelector('h2').textContent.includes('Sterne Anime')) {
+                        if (section.querySelector('h2').textContent.includes('Sterne Serien')) {
                             const rows = section.querySelectorAll('tr');
                             for (let i = 1; i < rows.length - 1; i++) { // Skip header and last empty
                                 const nameCell = rows[i].querySelectorAll('td')[1];
@@ -875,7 +875,7 @@ def home():
                         }
                     }
                 } else {
-                    alert('Keine hoch bewerteten Animes gefunden!');
+                    alert('Keine hoch bewerteten Serien gefunden!');
                 }
             });
 
