@@ -16,6 +16,7 @@ def home():
     <html lang="de">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Serien Liste</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -333,6 +334,325 @@ def home():
                 content: '★';
                 margin-right: 4px;
                 font-size: 0.75em;
+            }
+
+            /* ========== MOBILE RESPONSIVE DESIGN ========== */
+            
+            @media (max-width: 768px) {
+                body {
+                    padding: 16px;
+                }
+                
+                h1 {
+                    font-size: 1.8em;
+                    margin-bottom: 24px;
+                }
+                
+                #headerContainer {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                
+                #quickStats {
+                    width: 100%;
+                    flex-direction: column;
+                    gap: 16px;
+                    padding: 20px;
+                    margin-right: 0;
+                }
+                
+                #quickStats .stat {
+                    padding: 12px 0;
+                }
+                
+                #actionButtons {
+                    width: 100%;
+                    flex-direction: column;
+                }
+                
+                #exportButton, #importButton, #randomButton {
+                    width: 100%;
+                    padding: 14px 16px;
+                    font-size: 1em;
+                }
+                
+                #searchInput {
+                    font-size: 1.1em;
+                    padding: 14px 12px;
+                }
+                
+                .section {
+                    padding: 16px;
+                    margin-bottom: 20px;
+                    border-radius: 12px;
+                }
+                
+                .section h2 {
+                    font-size: 1.3em;
+                    margin-bottom: 16px;
+                }
+                
+                /* Table to Card transformation */
+                table {
+                    width: 100%;
+                }
+                
+                th {
+                    font-size: 0.7em;
+                    padding: 12px 8px;
+                }
+                
+                td {
+                    padding: 14px 8px;
+                    font-size: 1em;
+                }
+                
+                tr {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    border-bottom: 2px solid rgba(15, 52, 96, 0.3);
+                    padding: 16px 0;
+                    margin-bottom: 12px;
+                    background: rgba(22, 33, 62, 0.4);
+                    border-radius: 8px;
+                    padding: 16px;
+                    border: none;
+                }
+                
+                tr:hover {
+                    background-color: rgba(15, 52, 96, 0.2);
+                }
+                
+                tr:hover td {
+                    background-color: transparent;
+                }
+                
+                tr:first-child {
+                    display: none;
+                }
+                
+                td {
+                    border-bottom: none;
+                    background: transparent;
+                    padding: 12px 0;
+                    position: relative;
+                    padding-left: 110px;
+                    min-height: 40px;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                th {
+                    display: none;
+                }
+                
+                td:first-child::before {
+                    content: 'Bewertung: ';
+                    position: absolute;
+                    left: 0;
+                    font-weight: 600;
+                    color: #94a3b8;
+                    font-size: 0.85em;
+                    text-transform: uppercase;
+                }
+                
+                td:nth-child(2)::before {
+                    content: 'Name: ';
+                    position: absolute;
+                    left: 0;
+                    font-weight: 600;
+                    color: #94a3b8;
+                    font-size: 0.85em;
+                    text-transform: uppercase;
+                }
+                
+                td:nth-child(3)::before {
+                    content: 'Info: ';
+                    position: absolute;
+                    left: 0;
+                    font-weight: 600;
+                    color: #94a3b8;
+                    font-size: 0.85em;
+                    text-transform: uppercase;
+                }
+                
+                td:nth-child(4) {
+                    padding-left: 0;
+                }
+                
+                td:nth-child(4)::before {
+                    content: '';
+                }
+                
+                .rewatch-cell {
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 12px;
+                    border-top: 1px solid rgba(0, 212, 255, 0.2);
+                    padding-top: 12px;
+                }
+                
+                .rewatch-control {
+                    gap: 12px;
+                    padding: 8px 12px;
+                    font-size: 1.1em;
+                }
+                
+                .rewatch-btn {
+                    width: 36px;
+                    height: 36px;
+                    font-size: 1.1em;
+                }
+                
+                .badge {
+                    padding: 8px 12px;
+                    font-size: 0.95em;
+                }
+                
+                td[contenteditable]:focus {
+                    background-color: rgba(0, 212, 255, 0.15);
+                    border-radius: 6px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                body {
+                    padding: 12px;
+                }
+                
+                h1 {
+                    font-size: 1.5em;
+                    margin-bottom: 20px;
+                }
+                
+                #quickStats {
+                    padding: 16px;
+                    gap: 12px;
+                }
+                
+                .stat-value {
+                    font-size: 1.4em;
+                }
+                
+                .stat-label {
+                    font-size: 0.75em;
+                }
+                
+                #exportButton, #importButton, #randomButton {
+                    padding: 12px 14px;
+                    font-size: 0.95em;
+                }
+                
+                #searchInput {
+                    font-size: 1em;
+                    padding: 12px 10px;
+                }
+                
+                .section {
+                    padding: 14px;
+                    margin-bottom: 16px;
+                }
+                
+                .section h2 {
+                    font-size: 1.2em;
+                    margin-bottom: 14px;
+                }
+                
+                tr {
+                    padding: 14px;
+                    margin-bottom: 10px;
+                }
+                
+                td {
+                    font-size: 0.95em;
+                    padding-left: 100px;
+                    min-height: 38px;
+                }
+                
+                td:first-child::before {
+                    font-size: 0.8em;
+                }
+                
+                td:nth-child(2)::before {
+                    font-size: 0.8em;
+                }
+                
+                td:nth-child(3)::before {
+                    font-size: 0.8em;
+                }
+                
+                .rewatch-control {
+                    gap: 10px;
+                    font-size: 1em;
+                }
+                
+                .rewatch-btn {
+                    width: 32px;
+                    height: 32px;
+                    font-size: 1em;
+                }
+                
+                .badge {
+                    padding: 6px 10px;
+                    font-size: 0.9em;
+                }
+            }
+            
+            /* Landscape mobile */
+            @media (max-width: 900px) and (max-height: 500px) {
+                body {
+                    padding: 12px;
+                }
+                
+                h1 {
+                    font-size: 1.4em;
+                    margin-bottom: 16px;
+                }
+                
+                #headerContainer {
+                    gap: 12px;
+                    margin-bottom: 16px;
+                }
+                
+                #quickStats {
+                    padding: 12px;
+                    gap: 12px;
+                }
+                
+                #actionButtons {
+                    gap: 8px;
+                }
+                
+                #exportButton, #importButton, #randomButton {
+                    padding: 10px 12px;
+                    font-size: 0.9em;
+                }
+                
+                #searchInput {
+                    font-size: 1em;
+                    padding: 10px 8px;
+                    margin-bottom: 12px;
+                }
+            }
+            
+            /* Prevent horizontal scroll on all mobile devices */
+            @media (max-width: 768px) {
+                * {
+                    max-width: 100%;
+                    overflow-x: hidden;
+                }
+                
+                body {
+                    overflow-x: hidden;
+                    width: 100vw;
+                }
+                
+                table {
+                    overflow-x: hidden;
+                }
             }
         </style>
     </head>
