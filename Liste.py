@@ -49,6 +49,24 @@ def home():
                 letter-spacing: -0.025em;
             }
 
+            #creditText {
+                position: absolute;
+                top: 24px;
+                left: 24px;
+                font-size: 0.75em;
+                color: #64748b;
+                font-weight: 400;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                opacity: 0.7;
+            }
+
+            #creditText:hover {
+                color: #94a3b8;
+                opacity: 1;
+            }
+
             #headerContainer {
                 display: flex;
                 justify-content: space-between;
@@ -343,6 +361,13 @@ def home():
                     padding: 16px;
                 }
                 
+                #creditText {
+                    font-size: 0.7em;
+                    top: 16px;
+                    left: 16px;
+                    opacity: 0.6;
+                }
+                
                 h1 {
                     font-size: 1.8em;
                     margin-bottom: 24px;
@@ -523,6 +548,13 @@ def home():
                     padding: 12px;
                 }
                 
+                #creditText {
+                    font-size: 0.65em;
+                    top: 12px;
+                    left: 12px;
+                    opacity: 0.5;
+                }
+                
                 h1 {
                     font-size: 1.5em;
                     margin-bottom: 20px;
@@ -657,6 +689,7 @@ def home():
         </style>
     </head>
     <body>
+        <div id="creditText">Made by ChicoNathan</div>
         <h1>Serien Liste</h1>
         <div id="headerContainer">
             <div id="quickStats">
